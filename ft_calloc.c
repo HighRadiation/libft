@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: boksuz <boksuz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/02 17:19:40 by boksuz            #+#    #+#             */
-/*   Updated: 2025/06/18 19:25:01 by boksuz           ###   ########.fr       */
+/*   Created: 2025/06/18 16:20:51 by boksuz            #+#    #+#             */
+/*   Updated: 2025/06/18 18:13:57 by boksuz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	i;
+	void	*bravo;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	bravo = malloc(count * size);
+	if (bravo)
+		ft_bzero(bravo, count * size);
+	return (bravo);
 }

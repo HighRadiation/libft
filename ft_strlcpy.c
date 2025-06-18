@@ -6,7 +6,7 @@
 /*   By: boksuz <boksuz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 14:34:14 by boksuz            #+#    #+#             */
-/*   Updated: 2025/06/10 17:12:44 by boksuz           ###   ########.fr       */
+/*   Updated: 2025/06/18 18:21:07 by boksuz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 	src_len = ft_strlen(src);
 	if (dstsize == 0)
-		return (0);
+		return (src_len);
 	i = 0;
 	while (src[i] && i < dstsize - 1)
 	{
