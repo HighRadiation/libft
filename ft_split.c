@@ -6,7 +6,7 @@
 /*   By: boksuz <boksuz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 20:18:57 by boksuz            #+#    #+#             */
-/*   Updated: 2025/06/18 20:34:54 by boksuz           ###   ########.fr       */
+/*   Updated: 2025/06/19 12:14:52 by boksuz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ static int	count_words(const char *s, char c)
 
 static int	word_len(const char *s, char c)
 {
-	int	len = 0;
+	int	len;
+
+	len = 0;
 	while (s[len] && s[len] != c)
 		len++;
 	return (len);
@@ -49,7 +51,7 @@ static char	*word_dup(const char *s, int len)
 	i = 0;
 	word = (char *)malloc(len + 1);
 	if (!word)
-		return(NULL);
+		return (NULL);
 	while (i < len)
 	{
 		word[i] = s[i];
@@ -72,16 +74,15 @@ char	**ft_split(char const *s, char c)
 	result = (char **)malloc(sizeof(char *) * (words + 1));
 	if (!result)
 		return (NULL);
+	i = 0;
 	while (words--)
 	{
 		while (*s == c)
 			s++;
 		len = word_len(s, c);
-		result [i] = word_dup(s, len);
+		result[i] = word_dup(s, len);
 		if (!result[i])
-		{
-			return (NULL);	
-		}
+			return (NULL);
 		s += len;
 		i++;
 	}

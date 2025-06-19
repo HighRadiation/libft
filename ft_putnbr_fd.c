@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: boksuz <boksuz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 16:41:42 by boksuz            #+#    #+#             */
-/*   Updated: 2025/06/19 13:54:26 by boksuz           ###   ########.fr       */
+/*   Created: 2025/06/19 13:30:05 by boksuz            #+#    #+#             */
+/*   Updated: 2025/06/19 13:34:39 by boksuz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
-	size_t	k;
+	long	nb;
 
-	if (*little == '\0')
-		return ((char *)big);
-	i = 0;
-	while (big[i] && i < len)
+	nb = n;
+	if (nb < 0)
 	{
-		k = 0;
-		while (big[i + k] == little[k] && (i + k) < len)
-		{
-			if (little[k + 1] == '\0')
-				return ((char *)&big[i]);
-			k++;
-		}
-		i++;
+		write(fd, "-", 1);
+		nb = -nb;
 	}
-	return (NULL);
+	if (nb >= 10)
+		ft_putnbr_fd(nb / 10, fd);
+	nb = nb % 10 + '0';
+	write (fd, &nb, 1);
 }
