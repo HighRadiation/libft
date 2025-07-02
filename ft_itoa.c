@@ -6,12 +6,14 @@
 /*   By: boksuz <boksuz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 12:19:39 by boksuz            #+#    #+#             */
-/*   Updated: 2025/06/19 12:29:39 by boksuz           ###   ########.fr       */
+/*   Updated: 2025/06/28 16:12:14 by boksuz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/* this one is calculates the length, in every
+devide, it will count a step. */
 static int	get_len(int n)
 {
 	int	len;
@@ -25,6 +27,7 @@ static int	get_len(int n)
 	return (len);
 }
 
+/* Integer to ASCII,*/
 char	*ft_itoa(int n)
 {
 	char	*str;

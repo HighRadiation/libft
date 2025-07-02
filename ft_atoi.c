@@ -6,11 +6,9 @@
 /*   By: boksuz <boksuz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 20:24:17 by boksuz            #+#    #+#             */
-/*   Updated: 2025/06/17 20:50:45 by boksuz           ###   ########.fr       */
+/*   Updated: 2025/06/28 17:01:16 by boksuz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

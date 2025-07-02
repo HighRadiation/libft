@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_spilt.c                                         :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: boksuz <boksuz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/18 20:18:57 by boksuz            #+#    #+#             */
-/*   Updated: 2025/06/19 12:14:52 by boksuz           ###   ########.fr       */
+/*   Updated: 2025/06/28 16:25:42 by boksuz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// count_words, it will control the seperator which is that is 'char c'. 
 static int	count_words(const char *s, char c)
 {
 	int	count;
@@ -33,6 +34,8 @@ static int	count_words(const char *s, char c)
 	return (count);
 }
 
+/* word_len, it will count the length of string with a while, 
+if it see an seperator it will stop. */
 static int	word_len(const char *s, char c)
 {
 	int	len;
@@ -43,6 +46,7 @@ static int	word_len(const char *s, char c)
 	return (len);
 }
 
+/* Copy the string, you know the length of string. */
 static char	*word_dup(const char *s, int len)
 {
 	char	*word;
@@ -61,6 +65,15 @@ static char	*word_dup(const char *s, int len)
 	return (word);
 }
 
+/* free, it is going to start from last word to free (ex.index 4,3,2..) */
+static void	free_split(char **split, int i)
+{
+	while (i > 0)
+		free(split[--i]);
+	free (split);
+}
+
+/* ft_split a string into an array of words using a seperator character. */
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
@@ -82,7 +95,7 @@ char	**ft_split(char const *s, char c)
 		len = word_len(s, c);
 		result[i] = word_dup(s, len);
 		if (!result[i])
-			return (NULL);
+			return (free_split(result, i), NULL);
 		s += len;
 		i++;
 	}
