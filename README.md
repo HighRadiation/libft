@@ -70,6 +70,10 @@ Libft, C dilinde temel string ve bellek (memory) işlemleri ile çeşitli yardı
 - Bazı fonksiyonlar (`strlcpy`, `strlcat`, `bzero`) GNU C Kütüphanesinde (glibc) standart değildir.
 - Linux/glibc ortamında test için `<bsd/string.h>` dahil edilip, `-lbsd` ile derleme gerekebilir.
 
+## Makefile Hakkında Daha Fazla Bilgi
+
+Projede kullanılan Makefile’ın detaylı açıklaması için [Makefile.md dosyasına göz atabilirsiniz.](./Makefile.md)
+
 ## Örnek Kullanım
 
 ```c
