@@ -15,6 +15,7 @@
 
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdarg.h>
 
 int ft_isalpha(int c);
 int ft_isdigit(int c);
@@ -54,14 +55,24 @@ char *ft_substr(char const *s, unsigned int start, size_t len);
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char *ft_strnstr(const char *big, const char *little, size_t len);
 
-/* Bonus Part - Linked List Functions */
-typedef struct s_list
-{
-	void *content;
-	struct s_list *next;
-} t_list;
+// /* Bonus Part - Linked List Functions */
+// typedef struct s_list
+// {
+// 	void *content;
+// 	struct s_list *next;
+// } t_list;
 
-t_list *ft_lstnew(void *content);
-void ft_lstadd_front(t_list **lst, t_list *new);
+// t_list *ft_lstnew(void *content);
+// void ft_lstadd_front(t_list **lst, t_list *new);
+
+/* ft_printf */
+int ft_printf(const char *format, ...);
+int ft_format(char c, va_list *args);
+int ft_putchar(char c);
+int ft_putstr(const char *s);
+int ft_putnbr(int n);
+int ft_putunbr(unsigned int n);
+int ft_puthex(unsigned long n, char *upper);
+int ft_putptr(void *ptr);
 
 #endif
