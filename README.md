@@ -50,6 +50,40 @@ Libft, C dilinde temel string ve bellek (memory) işlemleri ile çeşitli yardı
 - `ft_putendl_fd`: Stringi yazıp sonuna yeni satır ekler.
 - `ft_putnbr_fd` : Tam sayıyı belirtilen dosya tanımlayıcısına yazar.
 
+### ft_printf
+
+Bu kütüphane, standart `printf` fonksiyonunun özel bir implementasyonunu da içerir:
+
+- `ft_printf`    : Format destekli çıktı fonksiyonu
+  - **Desteklenen format belirteçleri:**
+    - `%c` : Tek karakter yazdırır
+    - `%s` : String yazdırır
+    - `%p` : Pointer adresini hexadecimal formatta yazdırır
+    - `%d` / `%i` : Signed decimal integer yazdırır
+    - `%u` : Unsigned decimal integer yazdırır
+    - `%x` : Hexadecimal (küçük harf) yazdırır
+    - `%X` : Hexadecimal (büyük harf) yazdırır
+    - `%%` : Literal '%' karakteri yazdırır
+
+**Kullanım örneği:**
+```c
+ft_printf("Hello %s! Number: %d, Hex: %x\n", "World", 42, 255);
+// Çıktı: Hello World! Number: 42, Hex: ff
+```
+
+## Makefile Nedir?
+
+**Makefile**, projedeki kaynak dosyaların nasıl derleneceğini ve birleştirileceğini tanımlayan bir yapılandırma dosyasıdır; `make` komutuyla otomatik derleme sürecini yönetir.
+
+### Makefile Hedefleri
+
+```bash
+make        # Kütüphaneyi derle (libft.a oluşturur)
+make clean  # Object dosyalarını (.o) temizle
+make fclean # Tüm derleme çıktılarını temizle (libft.a dahil)
+make re     # Temizle ve yeniden derle (fclean + all)
+```
+
 ## Proje Detayları
 
 - **Kullanılan Dosyalar:** `Makefile`, `libft.h`, `ft_*.c`
@@ -57,8 +91,8 @@ Libft, C dilinde temel string ve bellek (memory) işlemleri ile çeşitli yardı
 - Kod, Norm kurallarına uygun olmalıdır. (Norm hatası = 0 puan)
 - Global değişken kullanımı yasak. Yardımcı fonksiyonlar `static` olmalıdır.
 - Derleme flag'leri: `-Wall -Wextra -Werror`
-- Makefile hedefleri: `NAME`, `all`, `clean`, `fclean`, `re`
 - Kütüphane, ar arşivi (`libft.a`) olarak oluşturulmalı.
+- Makefile `wildcard` kullanır (yeni dosyalar otomatik algılanır).
 - Libtool kullanımı yasak.
 - `malloc` ile ayrılan bellek mutlaka `free` edilmelidir.
 - Segfault, double free veya crash kabul edilmez.
