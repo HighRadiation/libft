@@ -70,32 +70,6 @@ Libft, C dilinde temel string ve bellek (memory) işlemleri ile çeşitli yardı
 - Bazı fonksiyonlar (`strlcpy`, `strlcat`, `bzero`) GNU C Kütüphanesinde (glibc) standart değildir.
 - Linux/glibc ortamında test için `<bsd/string.h>` dahil edilip, `-lbsd` ile derleme gerekebilir.
 
-## Makefile Hakkında Daha Fazla Bilgi
-
-Projede kullanılan Makefile’ın detaylı açıklaması için [Makefile.md dosyasına göz atabilirsiniz.](./Makefile.md)
-
-## Örnek Kullanım
-
-```c
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdio.h>
-#include "libft.h"
-
-int main(void)
-{
-    int fd = open("cikti", O_CREAT | O_RDWR | O_TRUNC, 0777);
-    if (fd == -1)
-    {
-        perror("Hata Çıktısı");
-        return (1);
-    }
-    ft_putstr_fd("selam", fd);
-    close(fd);
-    return (0);
-}
-```
-
 ## Lisans
 
 Bu proje 42 okulu eğitim amaçlıdır ve açık kaynak lisansı ile dağıtılabilir. Kendi geliştirmelerinizi yaparken kaynak göstermeniz önerilir.
