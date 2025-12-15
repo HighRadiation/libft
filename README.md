@@ -96,21 +96,6 @@ int main(void)
 }
 ```
 
-## Derleme
-
-Projeyi derlemek için:
-```sh
-make
-```
-
-## Temizlik Komutları
-
-```sh
-make clean    # Nesne dosyalarını siler
-make fclean   # Nesne dosyalarını ve libft.a'yı siler
-make re       # Yeniden derler
-```
-
 ## Lisans
 
 Bu proje 42 okulu eğitim amaçlıdır ve açık kaynak lisansı ile dağıtılabilir. Kendi geliştirmelerinizi yaparken kaynak göstermeniz önerilir.
